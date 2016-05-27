@@ -7,7 +7,7 @@ Selenium Webdriver bindings for the Crystal programming language.
 
 Only the Remote driver is available, so you need to download the release
 [Selenium Standalone Server](http://docs.seleniumhq.org/download/) then start
-it (adjust the version):
+it (adjust the version, and add `-mx<HEAP_SIZE>m` if required):
 
 ```
 $ java -jar selenium-server-standalone-2.48.2.jar
@@ -17,6 +17,8 @@ You may now start a session, which will launch a browser, and start interacting
 with it:
 
 ```crystal
+require "selenium-webdriver/selenium"
+
 driver = Selenium::Webdriver.new
 
 capabilities = {
